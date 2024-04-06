@@ -8,7 +8,7 @@ function App() {
   let [articles,setArticles] = useState([]);
 
   useEffect(()=>{
-    fetch("https://newsapi.org/v2/everything?q=india&from=2024-04-04&apiKey=08167649afd14634a754d23691fd556b")
+    fetch("https://newsapi.org/v2/everything?q=india&from=2024-04-05&apiKey=08167649afd14634a754d23691fd556b")
     .then((response)=>response.json())
     .then((news)=>{
       setArticles(news.articles);
@@ -26,7 +26,7 @@ function App() {
           articles.map((article)=>{
             return(
 
-              <News/>
+              <News article={article}/>
             )
           })
         }
